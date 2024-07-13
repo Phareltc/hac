@@ -1,6 +1,6 @@
 <!--Début de la Partie Header -->
 
-@include('partials.header')
+@include('partialsite.header')
 
 <!-- Fin de la Partie Header -->
 
@@ -16,7 +16,7 @@
 
     <!-- Navbar start -->
 
-    @include('partials.navbar')
+    @include('partialsite.navbar')
 
     <!-- Navbar End -->
 
@@ -45,7 +45,7 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="service-item">
-                        <img src="assets/img/service-1.jpg" class="img-fluid w-100" alt="Image">
+                        <img src="assetsite/img/service-1.jpg" class="img-fluid w-100" alt="Image">
                         <div class="service-link">
                             <a href="{{ url ('services') }}" class="h4 mb-0">Radio Gabon</a>
                         </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="service-item">
-                        <img src="assets/img/service-2.jpg" class="img-fluid w-100" alt="Image">
+                        <img src="assetsite/img/service-2.jpg" class="img-fluid w-100" alt="Image">
                         <div class="service-link">
                             <a href="{{ url ('services') }}" class="h4 mb-0"> La Matinale</a>
                         </div>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="service-item">
-                        <img src="assets/img/africa.png" class="img-fluid w-100" alt="Image">
+                        <img src="assetsite/img/africa.png" class="img-fluid w-100" alt="Image">
                         <div class="service-link">
                             <a href="{{ url ('services') }}" class="h4 mb-0">Radio Diffusion</a>
                         </div>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="service-item">
-                        <img src="assets/img/service-4.jpg" class="img-fluid w-100" alt="Image">
+                        <img src="assetsite/img/service-4.jpg" class="img-fluid w-100" alt="Image">
                         <div class="service-link">
                             <a href="{{ url ('services') }}" class="h4 mb-0">Gabon Eco</a>
                         </div>
@@ -106,7 +106,7 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="donation-item">
-                        <img src="assets/img/donation-1.jpg" class="img-fluid w-100" alt="Image">
+                        <img src="assetsite/img/donation-1.jpg" class="img-fluid w-100" alt="Image">
                         <div class="donation-content d-flex flex-column">
                             <h5 class="text-uppercase text-primary mb-4">Emissions Télévisées</h5>
                             <a href="#" class="btn-hover-color display-6 text-white">Sucré Salé</a>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="donation-item">
-                        <img src="assets/img/service-2.jpg" class="img-fluid w-100" alt="Image">
+                        <img src="assetsite/img/service-2.jpg" class="img-fluid w-100" alt="Image">
                         <div class="donation-content d-flex flex-column">
                             <h5 class="text-uppercase text-primary mb-4">Emissions Radio</h5>
                             <a href="#" class="btn-hover-color display-6 text-white">Matinal</a>
@@ -134,7 +134,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="donation-item">
-                        <img src="assets/img/service-4.jpg" class="img-fluid w-100" alt="Image">
+                        <img src="assetsite/img/service-4.jpg" class="img-fluid w-100" alt="Image">
                         <div class="donation-content d-flex flex-column">
                             <h5 class="text-uppercase text-primary mb-4">Emissions Télévisées</h5>
                             <a href="#" class="btn-hover-color display-6 text-white"></a>
@@ -231,7 +231,7 @@
                 <div class="col-lg-6 col-xl-3">
                     <div class="causes-item">
                         <div class="causes-img">
-                            <img src="assets/img/causes-4.jpg" class="img-fluid w-100" alt="Image">
+                            <img src="assetsite/img/causes-4.jpg" class="img-fluid w-100" alt="Image">
                             <div class="causes-link pb-2 px-3">
                                 <small class="text-white"><i class="fas fa-chart-bar text-primary me-2"></i>22/03/2024</small>
                                 <small class="text-white"><i class="fa fa-thumbs-up text-primary me-2"></i>2369</small>
@@ -255,7 +255,7 @@
                 <div class="col-lg-6 col-xl-3">
                     <div class="causes-item">
                         <div class="causes-img">
-                            <img src="assets/img/causes-3.jpg" class="img-fluid w-100" alt="Image">
+                            <img src="assetsite/img/causes-3.jpg" class="img-fluid w-100" alt="Image">
                             <div class="causes-link pb-2 px-3">
                                 <small class="text-white"><i class="fas fa-chart-bar text-primary me-2"></i>22/03/2024</small>
                                 <small class="text-white"><i class="fa fa-thumbs-up text-primary me-2"></i>2032</small>
@@ -279,7 +279,7 @@
                 <div class="col-lg-6 col-xl-3">
                     <div class="causes-item">
                         <div class="causes-img">
-                            <img src="assets/img/causes-2.jpg" class="img-fluid w-100" alt="Image">
+                            <img src="assetsite/img/causes-2.jpg" class="img-fluid w-100" alt="Image">
                             <div class="causes-link pb-2 px-3">
                                 <small class="text-white"><i class="fas fa-chart-bar text-primary me-2"></i>22/03/2024</small>
                                 <small class="text-white"><i class="fa fa-thumbs-up text-primary me-2"></i>5482</small>
@@ -304,7 +304,7 @@
                 <div class="col-lg-6 col-xl-3">
                     <div class="causes-item">
                         <div class="causes-img">
-                            <img src="assets/img/causes-1.jpg" class="img-fluid w-100" alt="Image">
+                            <img src="assetsite/img/causes-1.jpg" class="img-fluid w-100" alt="Image">
                             <div class="causes-link pb-2 px-3">
                                 <small class="text-white"><i class="fas fa-chart-bar text-primary me-2"></i>22/03/2024</small>
                                 <small class="text-white"><i class="fa fa-thumbs-up text-primary me-2"></i>4000</small>
@@ -346,9 +346,9 @@
                 <div class="event-item">
                     <a href="{{ url('evenements/' . $evenement->id) }}">
                         @if($evenement->photo)
-                        <img src="assets/{{ asset('storage/' . $evenement->photo) }}" class="img-fluid w-100" alt="Image">
+                        <img src="assetsite/{{ asset('storage/' . $evenement->photo) }}" class="img-fluid w-100" alt="Image">
                         @else
-                        <img src="assets/img/events-1.jpg" class="img-fluid w-100" alt="Default Image">
+                        <img src="assetsite/img/events-1.jpg" class="img-fluid w-100" alt="Default Image">
                         @endif
                     </a>
                     <div class="event-content p-4">
@@ -384,7 +384,7 @@
         <div class="row g-0">
             <div class="col-lg-4">
                 <div class="gallery-item">
-                    <img src="assets/img/gallery-2.jpg" class="img-fluid w-100" alt="">
+                    <img src="assetsite/img/gallery-2.jpg" class="img-fluid w-100" alt="">
                     <div class="search-icon">
                         <a href="img/gallery-2.jpg" data-lightbox="gallery-2" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
                     </div>
@@ -398,7 +398,7 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/service-2.jpg" class="img-fluid w-100" alt="">
+                    <img src="assetsite/img/service-2.jpg" class="img-fluid w-100" alt="">
                     <div class="search-icon">
                         <a href="img/service-2.jpg" data-lightbox="gallery-3" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
                     </div>
@@ -414,7 +414,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="gallery-item">
-                    <img src="assets/img/gallery-1.jpeg" class="img-fluid w-100" alt="">
+                    <img src="assetsite/img/gallery-1.jpeg" class="img-fluid w-100" alt="">
                     <div class="search-icon">
                         <a href="img/gallery-1.jpeg" data-lightbox="gallery-1" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
                     </div>
@@ -430,7 +430,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="gallery-item">
-                    <img src="assets/img/service-1.jpg" class="img-fluid w-100" alt="">
+                    <img src="assetsite/img/service-1.jpg" class="img-fluid w-100" alt="">
                     <div class="search-icon">
                         <a href="img/service-1.jpg" data-lightbox="gallery-4" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
                     </div>
@@ -444,7 +444,7 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="assets/img/gallery-5.jpg" class="img-fluid w-100" alt="">
+                    <img src="assetsite/img/gallery-5.jpg" class="img-fluid w-100" alt="">
                     <div class="search-icon">
                         <a href="img/gallery-5.jpg" data-lightbox="gallery-5" class="my-auto"><i class="fas fa-search-plus btn-hover-color bg-white text-primary p-3"></i></a>
                     </div>
@@ -471,7 +471,7 @@
                     <div class="row g-4">
                         <div class="col-lg-6">
                             <div class="volunteer-img">
-                                <img src="assets/img/volunteers-1.jpg" class="img-fluid w-100" alt="Image">
+                                <img src="assetsite/img/volunteers-1.jpg" class="img-fluid w-100" alt="Image">
                                 <div class="volunteer-title">
                                     <h5 class="mb-2 text-white">Michel Brown</h5>
                                     <p class="mb-0 text-white">Agent</p>
@@ -480,7 +480,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="volunteer-img">
-                                <img src="assets/img/volunteers-3.jpg" class="img-fluid w-100" alt="Image">
+                                <img src="assetsite/img/volunteers-3.jpg" class="img-fluid w-100" alt="Image">
                                 <div class="volunteer-title">
                                     <h5 class="mb-2 text-white">Talia MOMBO</h5>
                                     <p class="mb-0 text-white">Agent</p>
@@ -489,7 +489,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="volunteer-img">
-                                <img src="assets/img/volunteers-2.jpg" class="img-fluid w-100" alt="Image">
+                                <img src="assetsite/img/volunteers-2.jpg" class="img-fluid w-100" alt="Image">
                                 <div class="volunteer-title">
                                     <h5 class="mb-2 text-white">Mick PAMBOU</h5>
                                     <p class="mb-0 text-white">Agent</p>
@@ -498,7 +498,7 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="volunteer-img">
-                                <img src="assets/img/volunteers-4.jpg" class="img-fluid w-100" alt="Image">
+                                <img src="assetsite/img/volunteers-4.jpg" class="img-fluid w-100" alt="Image">
                                 <div class="volunteer-title">
                                     <h5 class="mb-2 text-white">Adélia ZOGHO</h5>
                                     <p class="mb-0 text-white">Agent</p>
@@ -527,6 +527,6 @@
 
     <!-- Footer Start -->
 
-    @include('partials.footer')
+    @include('partialsite.footer')
 
     <!-- Footer End -->
