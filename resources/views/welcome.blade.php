@@ -27,7 +27,7 @@
 
     <!-- Carousel End -->
 
-    @include('screens.dg')
+    @include('screens.motdudg')
 
     <!-- About Start -->
 
@@ -346,9 +346,9 @@
                 <div class="event-item">
                     <a href="{{ url('evenements/' . $evenement->id) }}">
                         @if($evenement->photo)
-                        <img src="assetsite/{{ asset('storage/' . $evenement->photo) }}" class="img-fluid w-100" alt="Image">
+                        <img src="{{ asset('storage/photos/' . $evenement->photo) }}" class="img-fluid w-100" alt="Image">
                         @else
-                        <img src="assetsite/img/events-1.jpg" class="img-fluid w-100" alt="Default Image">
+                        <img src="img/events-1.jpg" class="img-fluid w-100" alt="Default Image">
                         @endif
                     </a>
                     <div class="event-content p-4">
@@ -367,6 +367,7 @@
         </div>
     </div>
     <!-- Events End -->
+
 
     <!-- Blog Start -->
 

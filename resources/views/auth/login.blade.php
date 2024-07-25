@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light scroll-smooth group" data-layout="vertical" data-sidebar="light" data-sidebar-size="lg" data-mode="light" data-topbar="light" data-skin="default" data-navbar="sticky" data-content="fluid" dir="ltr">
+<html lang="fr" class="light scroll-smooth group" data-layout="vertical" data-sidebar="light" data-sidebar-size="lg" data-mode="light" data-topbar="light" data-skin="default" data-navbar="sticky" data-content="fluid" dir="ltr">
 
 @include('partials.head')
 
@@ -10,16 +10,16 @@
         <div class="mb-0 w-screen lg:mx-auto lg:w-[500px] card shadow-lg border-none shadow-slate-100 relative">
             <div class="!px-10 !py-12 card-body">
                 <a href="#!">
-                    <img src="assets/images/logo.png" alt="" class="hidden h-6 mx-auto dark:block">
-                    <img src="assets/images/logo.png" alt="" class="block h-6 mx-auto dark:hidden">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="" class="hidden h-6 mx-auto dark:block">
+                    <img src="{{ asset('assets/images/logo.png') }}" alt="" class="block h-6 mx-auto dark:hidden">
                 </a>
 
                 <div class="mt-8 text-center">
                     <h4 class="mb-1 text-custom-500 dark:text-custom-500">Bon retour !</h4>
-                    <p class="text-slate-500 dark:text-zink-200">Connectez vous afin de gérer vos taches.</p>
+                    <p class="text-slate-500 dark:text-zink-200">Connectez-vous afin de gérer vos tâches.</p>
                 </div>
 
-                <form method="POST" class="mt-10" id="signInForm" action="{{ route('login') }}">
+                <form method="POST" class="mt-10" id="signInForm" action="{{ route('admin.login.store') }}">
                     @csrf
                     <div class="hidden px-4 py-3 mb-3 text-sm text-green-500 border border-green-200 rounded-md bg-green-50 dark:bg-green-400/20 dark:border-green-500/50" id="successAlert">
                         You have <b>successfully</b> signed in.
@@ -42,20 +42,23 @@
                         <div id="remember-error" class="hidden mt-1 text-sm text-red-500">Please check the "Remember me" before submitting the form.</div>
                     </div>
                     <div class="mt-10">
-                        <button type="submit" class="w-full text-white transition-all duration-200 ease-linear btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">S'inscrire</button>
+                        <button type="submit" class="w-full text-white transition-all duration-200 ease-linear btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:ring-custom-400/20">Se connecter</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <script src='assets/libs/choices.js/public/assets/scripts/choices.min.js'></script>
-    <script src="assets/libs/%40popperjs/core/umd/popper.min.js"></script>
-    <script src="assets/libs/tippy.js/tippy-bundle.umd.min.js"></script>
-    <script src="assets/libs/simplebar/simplebar.min.js"></script>
-    <script src="assets/libs/prismjs/prism.js"></script>
-    <script src="assets/libs/lucide/umd/lucide.js"></script>
-    <script src="assets/js/starcode.bundle.js"></script>
-    <script src="assets/js/pages/auth-login.init.js"></script>
+    <script src="{{ asset('assets/libs/choices.js/public/assets/scripts/choices.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/@popperjs/core/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/tippy.js/tippy-bundle.umd.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
+    <script src="{{ asset('assets/libs/prismjs/prism.js') }}"></script>
+    <script src="{{ asset('assets/libs/lucide/umd/lucide.js') }}"></script>
+    <script src="{{ asset('assets/js/starcode.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/pages/auth-login.init.js') }}"></script>
+    <script src="{{ asset('assets/js/layout.js') }}"></script> <!-- Ajout de cette ligne -->
+    <link rel="stylesheet" href="{{ asset('assets/css/starcode2.css') }}"> <!-- Ajout de cette ligne -->
 
 </body>
+</html>

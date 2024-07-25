@@ -29,7 +29,6 @@
                                 <a href="{{ url ('about') }}"><i class="fas fa-angle-right me-2"></i> Missions</a>
                                 <a href="{{ url ('about') }}"><i class="fas fa-angle-right me-2"></i> Conseillers</a>
                                 <a href="{{ url ('about') }}"><i class="fas fa-angle-right me-2"></i> Notre histoire</a>
-                                <a href="{{ route('login') }}"><i class="fas fa-angle-right me-2"></i> Acces à l'administration</a>
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-6 col-xl-3">

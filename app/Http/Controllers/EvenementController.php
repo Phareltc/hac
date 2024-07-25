@@ -17,7 +17,7 @@ class EvenementController extends Controller
         $evenements = Evenement::all();
 
         // Passer les événements à la vue
-        return view('screensdash.evenements.evenements', compact('evenements'));
+        return view('evenements.evenements', compact('evenements'));
     }
 
     /**
@@ -26,7 +26,7 @@ class EvenementController extends Controller
     public function create()
     {
         // Retourner une vue pour créer un nouvel événement
-        return view('screensdash.evenements.create');
+        return view('evenements.create');
     }
 
     /**
@@ -83,7 +83,7 @@ class EvenementController extends Controller
         $evenement = Evenement::findOrFail($id);
 
         // Retourner une vue pour éditer un événement
-        return view('screensdash.evenements.edit', compact('evenement'));
+        return view('evenements.edit', compact('evenement'));
     }
 
     /**
@@ -150,5 +150,14 @@ class EvenementController extends Controller
 
         // Retourner la vue avec les événements
         return view('welcome', compact('evenements'));
+    }
+
+    public function countEvents()
+    {
+        // Récupérer le nombre total d'événements
+        $totalEvents = Evenement::count();
+
+        // Passer le nombre total d'événements à la vue
+        return view('accueil.index', compact('totalEvents'));
     }
 }
