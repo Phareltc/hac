@@ -4,33 +4,30 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMotdudgTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('motdudg', function (Blueprint $table) {
             $table->id();
-            $table->string('photo')->nullable();
-            $table->text('dg');
-            $table->text('missions');
+            $table->string('nomdg', 255);
             $table->text('description');
-            $table->text('visions');
+            $table->text('infodg');
+            $table->text('mission');
+            $table->text('vision');
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('motdudg');
+        Schema::dropIfExists('motdudgs');
     }
-}
+};

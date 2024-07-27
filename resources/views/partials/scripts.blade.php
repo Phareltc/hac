@@ -19,5 +19,10 @@
 <script src="assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
 <script src="assets/js/pages/form-editor-classic.init.js"></script>
 
+<!-- dropzone -->
+<script src="assets/libs/dropzone/dropzone-min.js"></script>
+<!--product create init js-->
+<script src="assets/js/pages/apps-ecommerce-product-create.init.js"></script>
+
 <!-- App js -->
 <script src="assets/js/app.js"></script>

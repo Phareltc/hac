@@ -8,14 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Motdudg extends Model
 {
     use HasFactory;
-
-    protected $table = 'motdudg';
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
     protected $fillable = [
-        'photo',
-        'dg',
-        'missions',
-        'visions',
+        'nomdg',
         'description',
+        'infodg',
+        'mission',
+        'vision',
+        'photo',
     ];
 }

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Motdudg;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use PhpParser\Node\Expr\AssignOp\Mod;
 
 class MotdudgController extends Controller
 {
@@ -13,10 +13,10 @@ class MotdudgController extends Controller
      */
     public function index()
     {
-        // Récupérer les informations de motdudg
-        $motdudg = Motdudg::first();
+        // Récupérer le mot du dg
+        $motdudg = Motdudg::all();
 
-        // Passer les informations à la vue
+        // Passer le mot du dg à la vue
         return view('motdudg.motdudg', compact('motdudg'));
     }
 
@@ -25,7 +25,7 @@ class MotdudgController extends Controller
      */
     public function create()
     {
-        // Retourner une vue pour créer un nouveau motdudg
+        // Retourner une vue pour créer un nouveau mot du DG
         return view('motdudg.create');
     }
 
@@ -34,13 +34,17 @@ class MotdudgController extends Controller
      */
     public function store(Request $request)
     {
+        // Déboguer les données de la requête Affiche toutes les données de la requête
+        // dd($request->all()); 
+
         // Valider les données
         $request->validate([
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'dg' => 'required|string',
-            'mission' => 'required|string',
-            'visions' => 'required|string',
+            'nomdg' => 'required|string|max:255',
             'description' => 'required|string',
+            'infodg' => 'required|string',
+            'mission' => 'required|string',
+            'vision' => 'required|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Gérer le téléchargement de la photo
@@ -48,84 +52,89 @@ class MotdudgController extends Controller
             $photoPath = $request->file('photo')->store('photos', 'public');
         }
 
-        // Créer ou mettre à jour les informations du motdudg
-        Motdudg::updateOrCreate(
-            [], // Update existing record
-            [
-                'photo' => $photoPath ?? null,
-                'dg' => $request->dg,
-                'mission' => $request->mission,
-                'visions' => $request->visions,
-                'description' => $request->visions,
-            ]
-        );
+        // Créer un nouvel événement
+        Motdudg::create([
+            'nomdg' => $request->nomdg,
+            'description' => $request->description,
+            'infodg' => $request->infodg,
+            'mission' => $request->mission,
+            'vision' => $request->vision,
+            'photo' => $photoPath ?? null,
+        ]);
 
-        // Rediriger vers la liste des informations
-        return redirect()->route('motdudg.index')->with('success', 'Informations mises à jour avec succès.');
+        // Rediriger vers la liste des événements
+        return redirect()->route('motdudg.index')->with('success', 'Le mot du Directeur a été créé avec succès.');
+    }
+
+
+
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Motdudg $motdudg)
+    {
+        // Récupérer le mot du Directeur par ID
+        $motdudg = Motdudg::findOrFail($motdudg);
+
+        // Retourner une vue pour afficher le mot du Directeur
+        return view('motdudg', compact('motdudg'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit()
+    public function edit(Motdudg $motdudg)
     {
-        // Récupérer les informations du motdudg
-        $motdudg = Motdudg::first();
+        // Récupérer l'événement par ID
+        $motdudg = Motdudg::findOrFail($motdudg);
 
-        // Retourner une vue pour éditer les informations
+        // Retourner une vue pour éditer le mot du Directeur
         return view('motdudg.edit', compact('motdudg'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, Motdudg $motdudg)
     {
         // Valider les données
         $validated = $request->validate([
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'dg' => 'required|string',
-            'mission' => 'required|string',
-            'visions' => 'required|string',
+            'nomdg' => 'required|string|max:255',
             'description' => 'required|string',
+            'infodg' => 'required|string',
+            'mission' => 'required|string',
+            'vision' => 'required|string',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Récupérer les informations du motdudg
-        $motdudg = Motdudg::first();
+        // Récupérer le mot du Directeur par ID
+        $motdudg = Motdudg::findOrFail($motdudg);
 
         // Gérer le téléchargement de la photo
         if ($request->hasFile('photo')) {
-            // Supprimer l'ancienne photo si elle existe
-            if ($motdudg->photo) {
-                Storage::disk('public')->delete($motdudg->photo);
-            }
             $validated['photo'] = $request->file('photo')->store('photos', 'public');
         }
 
-        // Mettre à jour les informations du motdudg
+        // Mettre à jour le mot du Directeur
         $motdudg->update($validated);
 
-        // Rediriger vers la liste des informations
-        return redirect()->route('motdudg.index')->with('success', 'Informations mises à jour avec succès.');
+        // Rediriger vers la liste des événements
+        return redirect()->route('evenements.index')->with('success', 'Événement mis à jour avec succès');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy()
+    public function destroy(Motdudg $motdudg)
     {
-        // Récupérer les informations du motdudg
-        $motdudg = Motdudg::first();
+        // Récupérer l'événement par ID
+        $motdudg = Motdudg::findOrFail($motdudg);
 
-        // Supprimer la photo associée si elle existe
-        if ($motdudg->photo) {
-            Storage::disk('public')->delete($motdudg->photo);
-        }
-
-        // Supprimer les informations du motdudg
+        // Supprimer le mot du Directeur
         $motdudg->delete();
 
-        // Rediriger vers la liste des informations
-        return redirect()->route('motdudg.index')->with('success', 'Informations supprimées avec succès.');
+        // Rediriger vers la liste des événements
+        return redirect()->route('motdudg.index')->with('success', 'Mot du Directeur supprimé avec succès');
     }
 }
